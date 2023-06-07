@@ -1,0 +1,60 @@
+<script>
+    /*
+    //PROBLEMA
+    Faça um script que leia 2 números e em seguida pergunte ao usuário qual operação ele deseja realizar. O resultado da operação deve ser acompanhado de uma frase que diga se o número é:
+    - par ou ímpar;
+    - positivo ou negativo;
+    - inteiro ou decimal.
+    */
+
+    //ENTRADA
+    const num = Number(prompt(`Informe o primeiro valor`).trim().replace(",", "."));
+    const num1 = Number(prompt(`Informe o segundo valor`).trim().replace(",", "."));
+    const operacao = prompt(`Informe a operação desejada. (Informe com * para multiplicação, / para divisão, + para adição e - para subtração)`).trim()
+    let resultado = 0;
+
+    //PROCESSAMENTO
+    if (operacao == "*") {
+        resultado = num * num1;
+    }
+    else if (operacao == "/") {
+        resultado = num / num1;
+    }
+    else if (operacao == "+") {
+        resultado = num + num1;
+    }
+    else if (operacao == "-") {
+        resultado = num - num1;
+    }
+    else {
+        replace(".", ".")
+        alert(`Operação inválida`)
+    }
+
+    if (resultado % 2 == 0 && resultado >= 0 && Number.isInteger(resultado)) {
+        alert(`${resultado} ele é par, positivo e inteiro`)
+    }
+    else if (resultado % 2 == 0 && resultado >= 0 && !Number.isInteger(resultado)) {
+        alert(`${resultado} ele é par, positivo e decimal`)
+    }
+    else if (resultado % 2 == 0 && !resultado >= 0 && Number.isInteger(resultado)) {
+        alert(`${resultado} ele é par, negativo e inteiro`)
+    }
+    else if (resultado % 2 == 0 && !resultado >= 0 && !Number.isInteger(resultado)) {
+        alert(`${resultado} ele é par, negativo e decimal`)
+    }
+    else if (!resultado % 2 == 0 && resultado >= 0 && Number.isInteger(resultado)) {
+        alert(`${resultado} ele é ímpar, positivo e inteiro`)
+    }
+    else if (!resultado % 2 == 0 && resultado >= 0 && !Number.isInteger(resultado)) {
+        alert(`${resultado} ele é ímpar, positivo e decimal`)
+    }
+    else if (!resultado % 2 == 0 && !resultado >= 0 && Number.isInteger(resultado)) {
+        alert(`${resultado} ele é ímpar, negativo e inteiro`)
+    }
+    else if (!resultado % 2 == 0 && !resultado >= 0 && !Number.isInteger(resultado)) {
+        alert(`${resultado} ele é ímpar, negativo e decimal`)
+    }
+
+
+</script>
